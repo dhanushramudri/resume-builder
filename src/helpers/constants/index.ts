@@ -1,7 +1,6 @@
 import dynamic from 'next/dynamic';
 import { IThemeColor, ITemplateContent } from './index.interface';
 
-import modernTemplate from '../../templates/modern/MordernTemplateTemplate';
 // Define system colors
 export const SYSTEM_COLORS: IThemeColor[] = [
   {
