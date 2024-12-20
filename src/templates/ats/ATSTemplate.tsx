@@ -94,7 +94,7 @@ export default function ATSTemplate() {
           {/* Achievements Section */}
           <SectionValidator value={achievements}>
             <Section title="Certificates and Awards">
-              <Achievements data={achievements} />
+              <Achievements achievements={achievements} />
             </Section>
           </SectionValidator>
         </div>
