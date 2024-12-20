@@ -29,14 +29,14 @@ export const SYSTEM_COLORS: IThemeColor[] = [
 
 // Define available templates
 export const AVAILABLE_TEMPLATES: { [key: string]: ITemplateContent } = {
-  modern: {
-    id: 'modern',
-    name: 'Modern Resume',
-    thumbnail: '/templates/modern.png',
-    component: dynamic(() => import('../../templates/modern/MordernTemplateTemplate'), {
-      ssr: false,
-    }),
-  },
+  // modern: {
+  //   id: 'modern',
+  //   name: 'Modern Resume',
+  //   thumbnail: '/templates/modern.png',
+  //   component: dynamic(() => import('../../templates/modern/MordernTemplateTemplate'), {
+  //     ssr: false,
+  //   }),
+  // },
   professional: {
     id: 'professional',
     name: 'Professional Resume',

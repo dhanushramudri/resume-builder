@@ -33,7 +33,7 @@ function HomePage() {
   useEffect(() => {
     const checkUserInDatabase = async () => {
       if (isLoaded && user) {
-        const response = await fetch(`http://localhost:5000/user/${user.id}`, {
+        const response = await fetch(`https://resume-backend-snowy.vercel.app/user/${user.id}`, {
           // Correct URL
           method: 'GET', // Use GET to fetch user details
           headers: {
