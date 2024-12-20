@@ -54,8 +54,15 @@ export default function ProfessionalTemplate() {
     tools: [],
   };
   const involvements = resumeData.activities?.involvements || [];
-  const achievements: { title: string; description: string }[] =
-    resumeData.activities?.achievements || [];
+
+  // Solution 1: Transform achievements data to match IAwardItem[]
+  const achievements: IAwardItem[] =
+    resumeData.activities?.achievements?.map((item) => ({
+      title: item.title,
+      description: item.description,
+      name: item.title, // Assuming the name might be the title
+      level: 'Beginner', // Default or computed value
+    })) || [];
 
   return (
     <ResumeContainer>
