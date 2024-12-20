@@ -9,8 +9,6 @@ import Involvement from './components/Involvement';
 import { Objective } from './components/Objective';
 import RatedSkills from './components/RatedSkills';
 import { Section } from './components/Section';
-// import { SectionValidator } from '@/helpers/common/components/ValidSectionRenderer';
-// import { StateContext } from '@/modules/builder/resume/ResumeLayout';
 import UnratedSkills from './components/UnratedSkills';
 import Work from './components/Work';
 import { SectionValidator } from '@/helpers/common/components/ValidSectionRenderer';
@@ -56,7 +54,8 @@ export default function ProfessionalTemplate() {
     tools: [],
   };
   const involvements = resumeData.activities?.involvements || [];
-  const achievements = resumeData.activities?.achievements || [];
+  const achievements: { title: string; description: string }[] =
+    resumeData.activities?.achievements || [];
 
   return (
     <ResumeContainer>
