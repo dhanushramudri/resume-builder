@@ -69,19 +69,25 @@ export default function ATSTemplate() {
           {/* Technical Skills Section */}
           <SectionValidator value={[...skills.languages, ...skills.frameworks]}>
             <Section title="Languages & Frameworks">
-              <SkillsSection list={[...skills.languages, ...skills.frameworks]} />
+              <SkillsSection
+                title="Languages & Frameworks"
+                list={[...skills.languages, ...skills.frameworks]}
+              />
             </Section>
           </SectionValidator>
 
           <SectionValidator value={[...skills.technologies, ...skills.libraries]}>
             <Section title="Technologies & Libraries">
-              <SkillsSection list={[...skills.technologies, ...skills.libraries]} />
+              <SkillsSection
+                title="Technologies & Libraries"
+                list={[...skills.technologies, ...skills.libraries]}
+              />
             </Section>
           </SectionValidator>
 
           <SectionValidator value={skills.tools}>
             <Section title="Tools">
-              <SkillsSection list={skills.tools} />
+              <SkillsSection title="Tools" list={skills.tools} />
             </Section>
           </SectionValidator>
 
@@ -97,7 +103,7 @@ export default function ATSTemplate() {
   );
 }
 
-function Section({ title, children }) {
+function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div>
       <h2 className="text-xl font-semibold">{title}</h2>
