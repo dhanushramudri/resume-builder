@@ -1,7 +1,15 @@
+import React from 'react';
 import { SectionHeading } from '../atoms/SectionHeading';
-import { SectionItem } from '../atoms/SectionItem';
 
-export const EducationSection = ({ education }: { education: EducationItem[] }) => (
+interface EducationItem {
+  degree: string;
+  field: string;
+  institution: string;
+  startDate: string;
+  endDate: string;
+}
+
+export const EducationSection: React.FC<{ education: EducationItem[] }> = ({ education }) => (
   <div>
     <SectionHeading title="Education" />
     {education.map((item, index) => (
