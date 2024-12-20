@@ -4,7 +4,14 @@ import { SectionList } from '../atoms/SectionList';
 import { SectionSubtitle } from '../atoms/SectionSubtitle';
 import { SectionTitle } from '../atoms/SectionTitle';
 
-export const ExperienceSection = ({ experience }: { experience: ExperienceItem[] }) => (
+interface ExperienceItem {
+  company: string;
+  title: string;
+  startDate: string;
+  endDate: string;
+  description: string;
+}
+export const ExperienceSection: React.FC<{ experience: ExperienceItem[] }> = ({ experience }) => (
   <div>
     <h2 className="text-lg font-semibold mb-2">Experience</h2>
     {experience.map((item, index) => (
