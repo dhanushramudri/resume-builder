@@ -1,4 +1,3 @@
-// src/modules/builder/BuilderLayout.tsx
 import EditorLayout from './editor/EditorLayout';
 import Image from 'next/image';
 import NavBarLayout from './nav-bar/NavBarLayout';
@@ -6,15 +5,16 @@ import ResumeHeader from './resume/components/ResumeHeader';
 import { ResumeLayout } from './resume/ResumeLayout';
 import Tooltip from '@mui/material/Tooltip';
 
-const BuilderLayout = () => {
+interface BuilderLayoutProps {
+  degree: string | string[]; // Adjust type based on usage
+  specialization: string | string[]; // Adjust type based on usage
+}
+
+const BuilderLayout: React.FC<BuilderLayoutProps> = ({ degree, specialization }) => {
   return (
     <div className="flex flex-col min-h-screen">
-      {' '}
-      {/* Changed to min-h-screen */}
       <NavBarLayout />
       <main className="flex flex-1 overflow-hidden">
-        {' '}
-        {/* Ensure it doesn't overflow */}
         <div className="flex flex-col flex-1 justify-center bg-custom-grey100 print:bg-white">
           <header className="w-[210mm] mt-5 mb-3 mx-auto print:hidden">
             <ResumeHeader />
