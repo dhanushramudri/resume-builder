@@ -1,6 +1,7 @@
 import dynamic from 'next/dynamic';
-import { IThemeColor, ITemplate } from './index.interface';
+import { IThemeColor, ITemplateContent } from './index.interface';
 
+// Define system colors
 export const SYSTEM_COLORS: IThemeColor[] = [
   {
     backgroundColor: 'white',
@@ -25,12 +26,13 @@ export const SYSTEM_COLORS: IThemeColor[] = [
   },
 ];
 
-export const AVAILABLE_TEMPLATES: { [key: string]: ITemplate } = {
+// Define available templates
+export const AVAILABLE_TEMPLATES: { [key: string]: ITemplateContent } = {
   modern: {
     id: 'modern',
     name: 'Modern Resume',
     thumbnail: '/templates/modern.png',
-    component: dynamic(() => import('@/templates/modern/MordernTemplate'), {
+    component: dynamic(() => import('@/templates/modern/ModernTemplate'), {
       ssr: false,
     }),
   },
@@ -74,17 +76,17 @@ export const AVAILABLE_TEMPLATES: { [key: string]: ITemplate } = {
       ssr: false,
     }),
   },
-
   deedy: {
     id: 'deedy',
     name: 'Deedy Resume',
-    thumbnail: '/templates/deedy.png', // Add the appropriate thumbnail path
+    thumbnail: '/templates/deedy.png',
     component: dynamic(() => import('@/templates/deedy/DeedyTemplate'), {
       ssr: false,
     }),
   },
 };
 
+// Define custom theme color
 export const CUSTOM_THEME_COLOR: IThemeColor = {
   backgroundColor: 'white',
   fontColor: 'black',
@@ -93,4 +95,5 @@ export const CUSTOM_THEME_COLOR: IThemeColor = {
   id: 4,
 };
 
+// Date picker format
 export const DATE_PICKER_FORMAT = 'DD/MM/YYYY';
