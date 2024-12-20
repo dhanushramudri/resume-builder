@@ -1,7 +1,12 @@
 import { SectionHeading } from '../atoms/SectionHeading';
 import { SectionItem } from '../atoms/SectionItem';
 
-export const ProjectsSection = ({ projects }: { projects: ProjectItem[] }) => (
+interface ProjectItem {
+  name: string;
+  techStack: string;
+  description: string;
+}
+export const ProjectsSection: React.FC<{ projects: ProjectItem[] }> = ({ projects }) => (
   <div>
     <h2 className="text-lg font-semibold mb-2">Projects</h2>
     {projects.map((project, index) => (
